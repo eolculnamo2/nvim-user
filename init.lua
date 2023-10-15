@@ -1,4 +1,3 @@
-require('leap').add_default_mappings()
 local config = {
   colorscheme = "onedark_vivid",
   plugins = {
@@ -10,7 +9,7 @@ local config = {
      event = { "BufRead", "BufNewFile" },
      config = function() require('cinnamon').setup() end,
    },
-   {"ggandor/leap.nvim"},
+  {"AstroNvim/astrocommunity", import = "astrocommunity.motion.leap-nvim" },
    {"stevearc/oil.nvim",
      config = function() require('oil').setup() end
    },
