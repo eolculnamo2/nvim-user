@@ -1,5 +1,10 @@
 local config = {
   colorscheme = "onedark_vivid",
+  options = {
+    opt = {
+      guicursor = "",
+    }
+  },
   plugins = {
   {
     "olimorris/onedarkpro.nvim",
@@ -9,7 +14,8 @@ local config = {
      event = { "BufRead", "BufNewFile" },
      config = function() require('cinnamon').setup() end,
    },
-  {"AstroNvim/astrocommunity", import = "astrocommunity.motion.leap-nvim" },
+  -- {"AstroNvim/astrocommunity", import = "astrocommunity.motion.leap-nvim" },
+  {"ggandor/leap.nvim", lazy = false},
    {"stevearc/oil.nvim",
      config = function() require('oil').setup() end
    },
@@ -44,10 +50,11 @@ local config = {
   {"vim-test/vim-test"},
   {"rescript-lang/vim-rescript"},
   {"evanleck/vim-svelte"},
-  {"itchyny/lightline.vim"},
+  {"itchyny/lightline.vim", lazy = false},
   {"MunifTanjim/prettier.nvim"},
   {"sindrets/diffview.nvim",
     requires = { { 'nvim-lua/plenary.nvim' } },
+    lazy = false,
     --    config = function() require("config.flutter").setup() end,
   },
   ["tamton-aquib/duck.nvim"] = {
@@ -71,5 +78,6 @@ local config = {
   }
   -- colorscheme = "poimandres",
 }
+require('leap').add_default_mappings()
 
 return config
