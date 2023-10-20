@@ -1,15 +1,15 @@
 local config = {
-  colorscheme = "onedark_vivid",
+  -- colorscheme = "onedark_vivid",
   options = {
     opt = {
       guicursor = "",
     }
   },
   plugins = {
-  {
-    "olimorris/onedarkpro.nvim",
-    priority = 1000 -- Ensure it loads first
-  },
+  -- {
+  --   "olimorris/onedarkpro.nvim",
+  --   priority = 1000 -- Ensure it loads first
+  -- },
    {"declancm/cinnamon.nvim",
      event = { "BufRead", "BufNewFile" },
      config = function() require('cinnamon').setup() end,
@@ -21,8 +21,11 @@ local config = {
    },
    -- Neorg
    {"nvim-neorg/neorg",
+     lazy = false,
      run = ":Neorg sync-parsers",
      config = function()
+      vim.keymap.set('n', '<leader>zi', ":Neorg index <CR>", {})
+      vim.keymap.set('n', '<leader>zr', ":Neorg return <CR>", {})
        require("neorg").setup {
          load = {
            ["core.defaults"] = {},
@@ -48,7 +51,7 @@ local config = {
    -- Elm
  {"ElmCast/elm-vim"},
   {"vim-test/vim-test"},
-  {"rescript-lang/vim-rescript"},
+  {"rescript-lang/vim-rescript", lazy=false},
   {"evanleck/vim-svelte"},
   {"itchyny/lightline.vim", lazy = false},
   {"MunifTanjim/prettier.nvim"},
