@@ -56,7 +56,7 @@ local config = {
      end,
    },
    -- blamer (like gitlense)
-   {"APZelos/blamer.nvim"},
+   {"APZelos/blamer.nvim", lazy=false},
    -- rust tools
    {"simrat39/rust-tools.nvim"},
    -- Elm
