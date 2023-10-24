@@ -17,6 +17,7 @@ local config = {
   -- {"AstroNvim/astrocommunity", import = "astrocommunity.motion.leap-nvim" },
   {"ggandor/leap.nvim", lazy = false},
    {"stevearc/oil.nvim",
+      lazy=false,
      config = function() require('oil').setup() end
    },
    -- Neorg
@@ -50,11 +51,11 @@ local config = {
    {"simrat39/rust-tools.nvim"},
    -- Elm
  {"ElmCast/elm-vim"},
-  {"vim-test/vim-test"},
+  {"vim-test/vim-test", lazy=false},
   {"rescript-lang/vim-rescript", lazy=false},
-  {"evanleck/vim-svelte"},
+  {"evanleck/vim-svelte", lazy=false},
   {"itchyny/lightline.vim", lazy = false},
-  {"MunifTanjim/prettier.nvim"},
+  {"MunifTanjim/prettier.nvim", lazy=false},
   {"sindrets/diffview.nvim",
     requires = { { 'nvim-lua/plenary.nvim' } },
     lazy = false,
