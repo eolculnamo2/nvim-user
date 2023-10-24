@@ -10,6 +10,16 @@ local config = {
   --   "olimorris/onedarkpro.nvim",
   --   priority = 1000 -- Ensure it loads first
   -- },
+    {"nvim-neo-tree/neo-tree.nvim",
+      lazy=false,
+      opts =  {
+        filesystem = {
+          filtered_items = {
+            hide_by_pattern ={ "*.bs.js", "*/kast-client/**/*.mjs" }
+          }
+        }
+      }
+    },
    {"declancm/cinnamon.nvim",
      event = { "BufRead", "BufNewFile" },
      config = function() require('cinnamon').setup() end,
