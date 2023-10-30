@@ -1,15 +1,15 @@
 local config = {
-  -- colorscheme = "onedark_vivid",
+  colorscheme = "onedark",
   options = {
     opt = {
       guicursor = "",
     }
   },
   plugins = {
-  -- {
-  --   "olimorris/onedarkpro.nvim",
-  --   priority = 1000 -- Ensure it loads first
-  -- },
+  {
+    "navarasu/onedark.nvim",
+    priority = 1000 -- Ensure it loads first
+  },
     {"nvim-neo-tree/neo-tree.nvim",
       lazy=false,
       opts =  {
