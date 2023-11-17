@@ -67,7 +67,11 @@ local config = {
     -- Elm
     { "ElmCast/elm-vim" },
     { "vim-test/vim-test", lazy = false },
-    { "rescript-lang/vim-rescript", lazy = false },
+    { "nvim-lspconfig", lazy = false },
+    { "rescript-lang/vim-rescript", lazy = false,
+        config = function()
+        require'lspconfig'.rescriptls.setup{}
+      end,},
     { "evanleck/vim-svelte", lazy = false },
     { "itchyny/lightline.vim", lazy = false },
     { "MunifTanjim/prettier.nvim", lazy = false },
